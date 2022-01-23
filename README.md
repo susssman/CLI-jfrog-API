@@ -4,12 +4,23 @@ made by Itay Rotman
 cli-jfrog - a CLI for Jfrog API with few commands
 
 Commands:
-  -p|--ping             Get server connection status (example: OK)
-  -V|--version          Get Artifactory version
-  --create-user         Create user in artifactory (require Pro subscription) example: ./cli-jfrog --create-user testuser1
-  --delete-user         Delete user in artifactory (require Pro subscription) example: ./cli-jfrog --delete-user testuser1
-  -df|--storage-info    Returns storage summary information regarding binaries, file store and repositories.
-  --create-repo         Creates a new repository in Artifactory with the provided configuration. (require Pro subscription) example: ./cli-jfrog --create-repo REPOKEY
-  --update-repo         Updates an existing repository configuration in Artifactory with the provided configuration elements. (require Pro subscription) example: ./cli-jfrog --update-repo REPOKEY
-  --get-repo            Returns a list of minimal repository details for all repositories of the specified type, you can choose type and packagetype or leave blank.
-  *                     Help
+ping, version, create-user, delete-user, storage-info, create-repo, update-repo, get-repo.
+execute: ./cli-jfrog help
+for more info.
+
+Usage:
+./cli-jfrog <command>
+
+if there is config file
+-YES
+--check if there is token
+---YES
+----execute command
+---NO
+----Enter username and password to generate a token for an hour.
+-----Executes command
+-NO
+--Creates new config file
+---Asks for servername
+----Enter username and password to generate a token for an hour.
+-----Executes command.
